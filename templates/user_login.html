@@ -1,0 +1,25 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <div class="container">
+            <h1>Login Form</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="un">Email</label>
+            <input type="text" name="un" id="un"><br>
+            <label for="pw">Password</label>
+            <input type="password" name="pw" id="pw">
+            <br>
+            <a href="{% url 'register' %}" >Signup</a>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+        </div>
+    </center>
+{% endblock %}

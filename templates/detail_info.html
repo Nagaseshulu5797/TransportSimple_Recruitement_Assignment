@@ -1,0 +1,27 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>Detals</h1>
+        <table class="table">
+          <tr>
+            <th>Quetion</th>
+            <th>Username</th>
+            <th>Answer</th>
+          </tr>
+          {% for x in AO.scl.all %}
+          <tr>
+            <td>{{AO.quetion}}</td>
+            <td>{{x.user}}</td>
+            <td>{{x.answer}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      <a href="{% url 'answer_form' %}" class="btn btn-success">Give answer</a>
+      <a href="{% url 'quetion_details' %}" class="btn btn-primary">Back_to_quetion</a>
+    </center>
+{% endblock %}

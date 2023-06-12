@@ -1,0 +1,20 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+<title>Question</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div id="one">
+        {% for x in QQ %}
+        <div>
+            <a href="{{x.pk}}"><h3>{{x.quetion}}</h3></a>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'quetion_form' %}" class="btn btn-primary">Add Question</a>
+    {% endif %}
+    </div>
+</center>
+{% endblock %}
